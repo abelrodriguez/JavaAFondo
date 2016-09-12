@@ -46,7 +46,8 @@ public class DeptDAO {
         catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
-        } finally {
+        } 
+        finally {
             try {
                 if( rs != null) rs.close();
                 if( pstm != null) pstm.close();

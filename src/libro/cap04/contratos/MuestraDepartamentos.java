@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package libro.cap04;
+package libro.cap04.contratos;
 
 import java.util.Collection;
+import libro.cap04.DeptDTO;
+import libro.cap04.UFactory;
 
 /**
  *
  * @author Abel Rodríguez
  */
-public class TestDeptDAO {
+public class MuestraDepartamentos {
     
     public static void main(String[] args) {
-        //instancio un DTO
-        DeptDAO dept = new DeptDAO();
+        Dept d = (Dept) UFactory.getInstancia("DEPT");
+        Collection<DeptDTO> coll = d.buscarTodos();
         
-        //le pido la coleccion de todos los departamentos
-        Collection<DeptDTO> coll = dept.buscarTodos();
-        
-        //itero la colección y muestro cada departamento (cada dto)
         for (DeptDTO dto:coll) {
             System.out.println(dto);
         }
